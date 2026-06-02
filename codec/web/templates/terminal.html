@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeC Terminal</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="terminal-header">
+    <h1>CodeC</h1>
+    <div class="status"><span class="dot"></span>Connected</div>
+  </div>
+  <div class="terminal-body" id="terminal-body">
+    <div class="msg system">CodeC v0.2.0 — AI coding assistant. Type /help for commands.</div>
+  </div>
+  <div class="terminal-input-area">
+    <span class="terminal-prompt">$</span>
+    <input type="text" class="terminal-input" id="terminal-input" placeholder="Type a message or /help..." autofocus>
+    <button class="terminal-btn" id="send-btn">Send</button>
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+</html>
