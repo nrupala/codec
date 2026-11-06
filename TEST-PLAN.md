@@ -21,7 +21,8 @@ session machinery.
 
 - Full pytest suite green on every push and pull request to `main`
   (`.github/workflows/tests.yml`, Python 3.12, dependencies from
-  `requirements.txt`, run as `pytest -q`).
+  `requirements.txt` plus `pytest` and `pytest-asyncio` — the suite's
+  async tests carry `@pytest.mark.asyncio` — run as `pytest -q`).
 - CodeQL static analysis on push, pull request, and weekly
   (`.github/workflows/codeql.yml`).
 - Per CONTRIBUTING.md: pull requests are marked ready for review when
