@@ -1,3 +1,4 @@
+import logging
 import os
 
 from fastapi import FastAPI, Request
@@ -46,8 +47,12 @@ async def chat(msg: ChatMessage):
         return JSONResponse({"response": response})
     except SystemExit:
         return JSONResponse({"response": "Goodbye!", "exit": True})
-    except Exception as e:
-        return JSONResponse({"error": str(e)}, status_code=500)
+    except Exception:
+        logging.getLogger(__name__).exception("chat request failed")
+        return JSONResponse(
+            {"error": "Internal error while processing the message."},
+            status_code=500,
+        )
 
 
 @app.get("/api/status")
